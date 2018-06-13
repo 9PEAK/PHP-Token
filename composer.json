@@ -1,0 +1,21 @@
+{
+    "name": "9peak/php-token",
+    "description": "Token for PHP . / PHP程序：加密计算数组序列Token。",
+    "license": "MIT",
+    "keywords": ["php token"],
+    "authors": [
+        {
+            "name": "Kane Young / 杨祥凯",
+            "email": "52653784@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">= 5.4"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Peak\\": "src"
+        }
+    }
+}
