@@ -27,7 +27,7 @@ class TimeToken extends Token {
 	 * */
 	public function makeToken($param)
 	{
-		$param[self::$key] || $param[self::$key] = self::$time;
+		@$param[self::$key] || $param[self::$key] = self::$time;
 		return parent::encode($param);
 	}
 
@@ -37,7 +37,7 @@ class TimeToken extends Token {
 	 * */
 	public function outputString($param, array $hiddenKey=[])
 	{
-		$param[self::$key] || $param[self::$key] = self::$time;
+		@$param[self::$key] || $param[self::$key] = self::$time;
 		foreach ($param as $key=>&$val) {
 			if (in_array($key, $hiddenKey)) {
 				unset($param[$key]);
