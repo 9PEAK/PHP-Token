@@ -22,6 +22,9 @@ class TimeToken extends Token {
 	}
 
 
+	/**
+	 * 获取时间戳
+	 * */
 	public function time()
 	{
 		return self::$time;
