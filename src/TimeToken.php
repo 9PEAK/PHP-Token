@@ -23,9 +23,9 @@ class TimeToken extends Token {
 
 
 	/**
-	 * 生成token
+	 * 生成token签名
 	 * */
-	public function makeToken($param)
+	public function sign($param)
 	{
 		@$param[self::$key] || $param[self::$key] = self::$time;
 		return parent::encode($param);
@@ -35,7 +35,7 @@ class TimeToken extends Token {
 	/**
 	 * 输出拼接字符串
 	 * */
-	public function outputString($param, array $hiddenKey=[])
+	public function signToArray($param, $key='token', array $hiddenKey=[])
 	{
 		@$param[self::$key] || $param[self::$key] = self::$time;
 		foreach ($param as $key=>&$val) {
@@ -43,7 +43,13 @@ class TimeToken extends Token {
 				unset($param[$key]);
 			}
 		}
-		return self::glue_param($param);
+		return $param;
+
+	}
+
+	public function signToQueryString ($param, $key='token', $hiddenKey=[])
+	{
+		return self::glue_param($this->signToArray($param, $key, $hiddenKey));
 	}
 
 	/**
