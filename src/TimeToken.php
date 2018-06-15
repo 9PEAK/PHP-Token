@@ -22,6 +22,11 @@ class TimeToken extends Token {
 	}
 
 
+	public function time()
+	{
+		return self::$time;
+	}
+
 	/**
 	 * 生成token签名
 	 * */
