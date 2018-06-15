@@ -44,8 +44,8 @@ class TimeToken extends Token {
 			}
 		}
 		return $param;
-
 	}
+
 
 	public function signToQueryString ($param, $key='token', $hiddenKey=[])
 	{
